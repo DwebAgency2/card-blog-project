@@ -19,7 +19,7 @@ header{
 }
 
 header h1{
-    font-size: 30px;
+    font-size: clamp(1.5rem, 3vw, 2.5rem); /* Adjusts between 1.5rem and 2.5rem based on viewport width */
     margin: 30px;
     font-weight: 800;
 }
@@ -55,30 +55,35 @@ main{
 }
 
 .blog h4{
-    font-size: 20px;
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Adjusts between 1rem and 1.25rem based on viewport width */
     background:hsl(47, 88%, 63%);;
     padding: 4px 11px;
     border-radius: 4px;
   display: inline-block;
     margin: 15px;
     text-align: left;
+    transition: 1s ease;
+}
+
+.blog h4:hover{
+  transform: scale(1.3);
 }
 .blog h5{
-    font-size: 15px;
+    font-size: clamp(0.875rem, 2vw, 1rem); /* Adjusts between 0.875rem and 1rem based on viewport width */
     margin: 15px;
     text-align: left;
     color: hsl(0, 0%, 50%);
 }
 
 .blog h1{
-    font-size: 25px;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* Adjusts between 1.25rem and 1.5rem based on viewport width */
     margin: 15px;
     text-align: left;
     font-size: 900;
     color: hsl(0, 0%, 7%);
 }
 .blog p{
-    font-size: 15px;
+    font-size: clamp(0.875rem, 2vw, 1rem); /* Adjusts between 0.875rem and 1rem based on viewport width */
     margin: 1px 15px;
     line-height: 30px;
     text-align: left;
@@ -92,4 +97,213 @@ main{
 
 .info h3{
     color: hsl(0, 0%, 50%);
+    transition: all 1s ease;
+}
+
+.info h3:hover{
+    color: black;
+}
+
+.info img{
+    transition: all 1s ease;
+}
+.info img:hover{
+  transform: translateX(20%);
+}
+
+
+
+/* Media Queries */
+
+
+@media (max-width: 460px) {
+
+    header{
+        padding: 2px;
+    }
+
+    header h1{
+        font-size: clamp(1.5rem, 3vw, 2.5rem); /* Adjusts between 1.5rem and 2.5rem based on viewport width */
+        margin: 5px;
+       
+    }
+
+
+    .blog {
+        width: 90%;
+        height: 110vh;
+    }
+
+    header h1 {
+
+        font-size: clamp(1rem, 5vw, 1.5rem); /* Adjusts between 1rem and 1.5rem based on viewport width */
+    }
+
+    .blog h4 {
+        margin-bottom: 3px;
+        font-size: clamp(0.875rem, 3vw, 1rem); /* Adjusts between 0.875rem and 1rem based on viewport width */
+    }
+
+    .blog h5 {
+        margin-bottom: 3px;
+        font-size: clamp(0.75rem, 2.5vw, 0.875rem); /* Adjusts between 0.75rem and 0.875rem based on viewport width */
+    }
+
+    .blog h1 {
+        font-size: clamp(1rem, 2.5vw, 1.25rem); /* Adjusts between 1rem and 1.25rem based on viewport width */
+    }
+
+    .blog p {
+        font-size: clamp(0.75rem, 2.5vw, 0.875rem); /* Adjusts between 0.75rem and 0.875rem based on viewport width */
+        line-height: 1.5; /* Adjusted to a relative unit for better scaling */
+    }
+
+    
+}
+
+
+@media (max-width: 660px) {
+
+    header{
+        padding: 2px;
+    }
+
+    header h1 {
+        font-size: clamp(1.2rem, 4vw, 2rem); /* Adjusts between 1.2rem and 2rem based on viewport width */
+    }
+   
+
+    .blog {
+        width: 60%;
+        height: auto;
+    }
+
+    .blog h4 {
+        margin-bottom: 3px;
+        font-size: clamp(0.875rem, 3vw, 1rem); /* Adjusts between 0.875rem and 1rem based on viewport width */
+    }
+
+    .blog h5 {
+        margin-bottom: 3px;
+        font-size: clamp(0.75rem, 2.5vw, 0.875rem); /* Adjusts between 0.75rem and 0.875rem based on viewport width */
+    }
+
+   
+}
+
+
+@media (max-width: 870px) {
+    .blog {
+        width: 60%;
+        height: 120vh;
+    }
+
+    .blog img{
+        width: 90%;
+        object-fit: cover;
+    }
+
+    header h1 {
+
+        font-size: clamp(1rem, 5vw, 1.5rem); /* Adjusts between 1rem and 1.5rem based on viewport width */
+    }
+
+    .blog h4 {
+        margin-bottom: 3px;
+        font-size: clamp(0.875rem, 3vw, 1rem); /* Adjusts between 0.875rem and 1rem based on viewport width */
+    }
+
+    .blog h5 {
+        margin-bottom: 3px;
+        font-size: clamp(0.75rem, 2.5vw, 0.875rem); /* Adjusts between 0.75rem and 0.875rem based on viewport width */
+    }
+
+    .blog h1 {
+        font-size: clamp(1rem, 2.5vw, 1.25rem); /* Adjusts between 1rem and 1.25rem based on viewport width */
+    }
+
+    .blog p {
+        font-size: clamp(0.75rem, 2.5vw, 0.875rem); /* Adjusts between 0.75rem and 0.875rem based on viewport width */
+        line-height: 1.5; /* Adjusted to a relative unit for better scaling */
+    }
+
+    .info{
+        width: 30%;
+        height: auto;
+    }
+}
+
+@media (max-width: 1060px) {
+    .blog {
+        width: 50%;
+        height: auto;
+    }
+
+    .blog img{
+        width: 90%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 1060px) {
+    .blog {
+        width: 50%;
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+    .blog {
+        width: 40%;
+        height: auto;
+    }
+
+    .blog img{
+        width: 90%;
+        object-fit: cover;
+    }
+}
+
+
+@media (max-width: 1600px) {
+    .blog {
+        width: 35%;
+    }
+}
+
+
+
+
+
+@media (max-width: 1920px) {
+    .blog {
+        width: 35%;
+    }
+
+    header h1 {
+        margin-bottom: 15px;
+        font-size: clamp(1rem, 5vw, 1.5rem); /* Adjusts between 1rem and 1.5rem based on viewport width */
+    }
+
+    .blog h4 {
+        margin-bottom: 15px;
+        font-size: clamp(0.875rem, 3vw, 1rem); /* Adjusts between 0.875rem and 1rem based on viewport width */
+    }
+
+    .blog h5 {
+        margin-bottom: 15px;
+        font-size: clamp(0.75rem, 2.5vw, 0.875rem); /* Adjusts between 0.75rem and 0.875rem based on viewport width */
+    }
+
+    .blog h1 {
+        margin-bottom: 15px;
+        font-size: clamp(1rem, 2.5vw, 1.25rem); /* Adjusts between 1rem and 1.25rem based on viewport width */
+    }
+
+    .blog p {
+        margin-bottom: 15px;
+        font-size: clamp(0.75rem, 2.5vw, 0.875rem); /* Adjusts between 0.75rem and 0.875rem based on viewport width */
+        line-height: 1.5; /* Adjusted to a relative unit for better scaling */
+    }
 }
