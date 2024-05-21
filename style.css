@@ -279,11 +279,17 @@ main{
 @media (max-width: 1920px) {
     .blog {
         width: 35%;
+        height: auto;
     }
+
 
     header h1 {
         margin-bottom: 15px;
         font-size: clamp(1rem, 5vw, 1.5rem); /* Adjusts between 1rem and 1.5rem based on viewport width */
+    }
+
+    .blog img{
+        width: 90%;
     }
 
     .blog h4 {
